@@ -3,36 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissor Game</title>
+    <title>Rock Paper Scissors Game</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Rock Paper Scissors</h1>
     <p>This aims to build the javascript logic for the game of ROCK PAPER SCISSORS</p>
-    <div id="game">
+    <div class="game1" id="game" >
         <div id="scoreboard">
-            <div id="user-label" class="badge">user</div>
-            <div id="computer-label" class="badge">comp</div>
-            <span id="user-score">0</span>:<span id="computer-score">0</span>
+            <div id="user-label" class="badge">user </div><span id="user-score">0</span>
+            <div id="computer-label" class="badge">comp </div><span id="computer-score">0</span>
         </div>
         <div id="result">
-            <p>Paper covers Rock. You win!</p>
+            <p>Make your move to start the game!</p>
         </div>
         <div id="choices">
-            <div class="choice" id="r">
-                <img src="http://www.harrisongypsum.com/wp-content/uploads/2013/07/rock.png" alt="">
+            <div class="choice" id="rock">
+                <img src="images/rock.png" alt="Rock">
             </div>
-            <div class="choice" id="p">
-                <img src="http://www.clipartbest.com/cliparts/jTx/5jq/jTx5jqLTE.png" alt="">
+            <div class="choice" id="paper">
+                <img src="images/paper.png" alt="Paper">
             </div>
-            <div class="choice" id="s">
-                <img src="http://www2.fiskars.com/var/fiskars_amer/storage/images/frontpage2/kids-activities-school/products/kids-scissors/blunt-tip-kids-scissors-5/16059-14-eng-US/Blunt-tip-Kids-Scissors-5_product_main.png" alt="">
+            <div class="choice" id="scissors">
+                <img src="images/scissors.png" alt="Scissors">
             </div>
         </div>
         <p id="action-message">Make your move</p>
         <div class="reset">
             <button id="reset">Reset</button>
         </div>
+    </div>
     <script src="scripts.js"></script>
 </body>
 </html>
