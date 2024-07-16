@@ -14,10 +14,9 @@ const bodyElement = document.body;
 let computerScore = 0;
 let humanScore = 0;
 
-function markChoice(element){
-    element.classList.add("choice-selected");
-}
-
+// function markChoice(element){
+//     element.classList.add("choice-selected");
+// }
 
 
 function getComputerChoice(){
@@ -55,21 +54,21 @@ function gameLogic(userChoice){
     }
     console.log(userChoice);
     humanChoice = userChoice;
-    if(humanChoice == 'rock'){
-        markChoice(rockChoice);
-        paperChoice.classList.remove("choice-selected");
-        scissorsChoice.classList.remove("choice-selected");
-    }
-    if(humanChoice == 'paper'){
-        markChoice(paperChoice);
-        rockChoice.classList.remove("choice-selected");
-        scissorsChoice.classList.remove("choice-selected");
-    }
-    if(humanChoice == 'scissors'){
-        markChoice(scissorsChoice);
-        paperChoice.classList.remove("choice-selected");
-        rockChoice.classList.remove("choice-selected");
-    }
+    // if(humanChoice == 'rock'){
+    //     markChoice(rockChoice);
+    //     paperChoice.classList.remove("choice-selected");
+    //     scissorsChoice.classList.remove("choice-selected");
+    // }
+    // if(humanChoice == 'paper'){
+    //     markChoice(paperChoice);
+    //     rockChoice.classList.remove("choice-selected");
+    //     scissorsChoice.classList.remove("choice-selected");
+    // }
+    // if(humanChoice == 'scissors'){
+    //     markChoice(scissorsChoice);
+    //     paperChoice.classList.remove("choice-selected");
+    //     rockChoice.classList.remove("choice-selected");
+    // }
     let computerChoice = getComputerChoice();
     console.log(computerChoice);
     let result = humanChoice[0]+computerChoice[0];
@@ -96,6 +95,17 @@ function gameLogic(userChoice){
 function win(userChoice, computerChoice){
     humanScore++;
     userScoreElement.innerHTML = humanScore;
+    if(humanScore == 5){
+        resultElement.innerHTML = winnerDecider(computerScore,humanScore);
+        rockChoice.classList.remove("choice-selected");
+        paperChoice.classList.remove("choice-selected");
+        scissorsChoice.classList.remove("choice-selected");
+        gameBoard.classList.add("game1-over");
+        rockChoice.disabled = true;
+        paperChoice.disabled = true;
+        scissorsChoice.disabled = true;
+        return;
+    }
     resultElement.innerHTML = `${userChoice} beats ${computerChoice}. You win!`;
     resultElement.classList.add("win-animation");
     setTimeout(() => {
@@ -106,6 +116,13 @@ function win(userChoice, computerChoice){
 function lose(userChoice, computerChoice){
     computerScore++;
     computerScoreElement.innerHTML = computerScore;
+    if(computerScore == 5){
+        resultElement.innerHTML = winnerDecider(computerScore,humanScore);
+        rockChoice.disabled = true;
+        paperChoice.disabled = true;
+        scissorsChoice.disabled = true;
+        return;
+    }
     resultElement.innerHTML = `${computerChoice} beats ${userChoice}. You lose!`;
 }
 

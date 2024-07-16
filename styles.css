@@ -12,23 +12,18 @@
 
 @keyframes fade-in{
     0%{
-        transform: translateY(-100px);
         opacity: 0;
     }
     10%{
-        transform: translateY(-90px);
         opacity: 0.1;
     }
     20%{
-        transform: translateY(-80px);
         opacity: 0.2;
     }
     30%{
-        transform: translateY(-70px);
         opacity: 0.3;
     }
     40%{
-        transform: translateY(-60px);
         opacity: 0.4;
     }
     50%{
@@ -95,7 +90,6 @@
         transform: scale(1.1);
     }
     100%{
-    
         background-color:red;
         transform: scale(1);
     }
@@ -104,9 +98,10 @@
 
 .background-win {
     background-image: url("images/suresh-gopi-1676906107.jpg");
+    animation: fade-in 10s ease-in-out;
     background-size: cover;
     background-position: center;
-    animation: fadeIn 100s ease-in-out;
+    transition: background 10s fade-in forwards;
 }
 
 /* General Styles */
@@ -132,6 +127,7 @@ h1 {
 }
 
 
+
 #game {
     background-color: #fff;
     border: 2px solid #333;
@@ -139,6 +135,7 @@ h1 {
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    z-index: 1;
 }
 
 
@@ -193,10 +190,10 @@ h1 {
     transform: scale(1.1);
 }
 
-.choice-selected {
+/* .choice-selected {
     border: 2px solid #333;
     border-radius: 10px;
-}
+} */
 
 /* Action Message */
 #action-message {
